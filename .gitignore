@@ -1,0 +1,5 @@
+.idea
+node_modules
+.vs_code
+DS_tore
+.eslintrc.json
