@@ -5,5 +5,5 @@ const calculateAverage = (numbers) => {
 };
 
 const nums = [1, 2, 3, 4, 5];
-console.log(calculateAverage(nums)); // Вывод: 3
+console.log(calculateAverage(nums));
 
