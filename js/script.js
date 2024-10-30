@@ -1,9 +1,15 @@
-const calculateAverage = (numbers) => {
-    if (numbers.length === 0) return 0;
-    const sum = numbers.reduce((acc, num) => acc + num, 0);
-    return sum / numbers.length;
+const formatProductInfo = (product) => {
+    const availability = product.available ? 'Так' : 'Ні';
+    return `Товар: ${product.name}, Ціна: ${product.price} грн., В наявності: ${availability}`;
 };
 
-const nums = [1, 2, 3, 4, 5];
-console.log(calculateAverage(nums));
+// Пример использования
+const product = {
+    name: "Машина",
+    price: 80000,
+    available: true
+};
+
+console.log(formatProductInfo(product));
+
 
