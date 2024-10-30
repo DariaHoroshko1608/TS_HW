@@ -1,30 +1,9 @@
-const BankAccount = (function() {
-    let balance = 0;
+const calculateAverage = (numbers) => {
+    if (numbers.length === 0) return 0;
+    const sum = numbers.reduce((acc, num) => acc + num, 0);
+    return sum / numbers.length;
+};
 
-    return {
-        deposit: function(amount) {
-            if (amount > 0) {
-                balance += amount;
-                console.log(`Депозит: ${amount}. Новий баланс: ${balance}`);
-            } else {
-                console.log("Сума депозиту повинна бути позитивною.");
-            }
-        },
-        withdraw: function(amount) {
-            if (amount > 0 && amount <= balance) {
-                balance -= amount;
-                console.log(`Виведення: ${amount}. Новий баланс: ${balance}`);
-            } else {
-                console.log("Недостатньо коштів або неправильна сума для виведення.");
-            }
-        },
-        getBalance: function() {
-            return balance;
-        }
-    };
-})();
+const nums = [1, 2, 3, 4, 5];
+console.log(calculateAverage(nums)); // Вывод: 3
 
-const myAccount = BankAccount;
-myAccount.deposit(100);
-myAccount.withdraw(30);
-console.log(myAccount.getBalance());
